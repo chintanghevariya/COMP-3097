@@ -1,0 +1,16 @@
+<div class="mainContainer">
+<h1 class="headerClass">SpaceX Mission            by - Chintan Ghevariya</h1>
+<mat-card class="fullPage" (click)="navigateToDetails(mission.flight_number)"  *ngFor= "let mission of missions">
+  <div  class="example-card">
+  <img class="imageStyle" mat-card-lg-image src="{{mission.links.mission_patch_small}}" alt="mission img">  
+  <mat-card-content >
+
+    <mat-card-title> Name: {{mission.mission_name}} </mat-card-title>  Launch_Year: {{mission.launch_year}}
+   
+    </mat-card-content>
+    </div>
+    <p style="font-size: large;">
+      Details: {{mission.details}}
+    </p>
+  </mat-card>
+</div>

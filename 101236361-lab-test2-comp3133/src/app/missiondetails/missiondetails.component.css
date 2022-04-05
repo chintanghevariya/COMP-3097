@@ -1,0 +1,28 @@
+.example-card{
+    max-width: '80%';
+    margin-bottom: 8px;
+    flex-direction: row;
+    display: flex;
+    font-weight: 900;
+   
+}
+.mainColor{
+    background-color: antiquewhite;
+}
+
+.headerClass{
+    font-size: xxx-large;
+    background-color: white;
+    font-weight: bolder;
+    margin-top: 15px;
+    font-weight: bolder;
+}
+.mainContainer{
+    border: 4px solid black;
+}
+.headerFont{
+    color: lightcoral;
+    font-weight: bolder;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}

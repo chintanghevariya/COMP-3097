@@ -1,0 +1,28 @@
+<div class="mainContainer">
+    <mat-card-header>
+        <h1 class="headerClass"> SpaceX Mission Details</h1>
+    </mat-card-header>
+    
+    <div>
+        <mat-card  class="mainColor">
+            <div class="example-card">
+            <img height='280px' width='260px'  src="{{missions.links.mission_patch_small}}" alt="mission img">&nbsp;&nbsp;&nbsp;&nbsp;
+            <div>
+                <h1 class="headerFont">Mission : {{missions.mission_name}}</h1>
+                    Launch Year: {{missions.launch_year}}<br/>
+                    Details: {{missions.details}}
+                <h1 class="headerFont">Rocket</h1>
+                    Name : {{missions.rocket.rocket_name}}<br/>
+                    Type : {{missions.rocket.rocket_type}}
+                <h1 class="headerFont">Launch Site</h1>
+                    Name : {{missions.launch_site.site_name_long}}
+            </div>
+            </div>
+            <h1 class="headerFont"> Launch Details</h1>
+            {{missions.details}}
+            <h1 class="headerFont"> More Info on Launch Details</h1>
+            <mat-icon svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
+        </mat-card>
+       
+    </div>
+</div>
