@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Country For News</title>
+    <link rel="stylesheet" type="text/css" href="/templates/styles.css">
+    <link rel="icon" href="/img/favicon.png" type="image/x-icon">
+</head>
+<body>
+<a>
+    <img src="/img/logo.png" alt="Logo"/>
+</a>
+
+<div class="select-container">
+    <form action="/searchnews" method="post">
+        <div class="search-container">
+            <input type="text" name="searchQuery" placeholder="Search..." id="search-bar"/>
+            <button id="search-button">Search</button>
+        </div>
+    </form>
+        <form action="/news" method="post">
+          <label for="selectedOption">Select a Country:</label><br/>
+          <select id="selectedOption" name="selectedOption">
+            <option th:each="option : ${options}" th:value="${option.getValue()}" th:text="${option.getKey()}"></option>
+          </select><br/>
+          <button type="submit">Submit</button>
+        </form>
+</div>
+
+</body>
+</html>
+

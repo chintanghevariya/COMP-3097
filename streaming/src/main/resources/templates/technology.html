@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Digi Sports | Technology</title>
+  <meta charset="UTF-8">
+  <link href="/img/favicon.png" rel="icon">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    footer {
+      background-color: #343a40;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .logo{
+      width: 160px;
+      height: 48px;
+    }
+  </style>
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+<!-- Navigation Bar -->
+<div class="bg-primary text-white p-3 fixed-top" th:replace="fragments/header :: header"></div>
+
+
+<div class="bg-primary text-white p-3 fixed-bottom" th:replace="fragments/footer :: footer"></div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Digi Sports | Home</title>
+  <link href="/img/favicon.png" rel="icon">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
+
+  <!-- CSS Libraries -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="../static/lib/slick/slick.css" rel="stylesheet">
+  <link href="../static/lib/slick/slick-theme.css" rel="stylesheet">
+
+  <style>
+    footer {
+      background-color: #343a40;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    body, p {
+      font-family: Georgia, serif;
+    }
+
+
+
+    .article-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .article-card {
+      width: 700px;
+      border: 1px solid #ddd;
+      margin: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+    }
+
+    .article-card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    img {
+      width: 100%;
+      /*max-height: 300px;*/
+      object-fit: cover;
+    }
+
+    .article-details {
+      padding: 16px;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin: 0;
+      margin-bottom: 10px;
+    }
+
+    .article-description {
+      font-size: 0.9rem;
+      margin: 0;
+      margin-bottom: 10px;
+    }
+
+    .article-date,
+    .article-source {
+      font-size: 0.8rem;
+      margin: 0;
+      color: #777;
+    }
+    .long-paragraph {
+      line-height: 1.6; /* Adjust line height for readability */
+      font-size: 16px; /* Adjust font size as needed */
+      text-align: justify; /* Justify text for a clean layout */
+      padding: 10px; /* Add padding for readability */
+      border: 1px solid #ddd; /* Optional: Add a border for separation */
+    }
+
+
+
+    .container{
+      margin-top: 5%;
+    }
+
+    .navbar {
+      justify-content: center;
+      display: flex;
+      align-items: center;
+    }
+    .logo{
+      width: 160px;
+      height: 48px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div th:replace="fragments/header :: header"></div>
+
+<!-- Featured News Section -->
+<div class="container article-list">
+  <div class="nav-item dropdown">
+    <form id="myForm" action="/news" method="post">
+      <div class="nav-item nav-link">
+        <label for="selectedOption">Select a Country:</label>
+        <select id="selectedOption" name="selectedOption" onchange="this.form.submit()">
+          <option class="fa fa-search"  th:each="option : ${options}" th:value="${option.getValue()}" th:text="${option.getKey()}"></option>
+        </select>
+      </div>
+    </form>
+  </div>
+
+
+  <div class="article-list">
+    <div class="article-card" th:each="atricle : ${articlesList}">
+      <img th:src="${atricle.getUrlToImage()}">
+      <div class="article-details">
+        <h2 th:text="${atricle.getTitle()}"></h2>
+        <p class="article-description" th:text="${atricle.getDescription()}"></p>
+        <p class="content" th:text="${atricle.getContent()}"></p>
+        <!--      <p><time th:datetime=`${#dates.format(${atricle.getPublishedAt()},'yyyy-MM-dd')}`></time></p>-->
+        <p class="article-source" th:text="${atricle.getSource().getName()}"></p>
+        <a th:href="${atricle.getUrl()}" target="_blank">source</a>
+      </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap JavaScript and dependencies -->
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
